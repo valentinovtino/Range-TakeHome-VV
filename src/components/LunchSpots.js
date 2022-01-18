@@ -90,8 +90,9 @@ const LunchSpots = () => {
                         className='formInput' 
                         type='url' 
                         placeholder='https://example.com'
+                        pattern="https://.*" 
                         name="link" 
-                        {...register('link', {required: true})}
+                        {...register('link', {required: 'Don\'t forget to include https://'})}
                         />
                     <input
                         className='formInput' 
@@ -103,7 +104,6 @@ const LunchSpots = () => {
                     <input className='formSubmit' type='submit'/>
                 </form> :
                 null}
-
         </div>
     )   
 };
