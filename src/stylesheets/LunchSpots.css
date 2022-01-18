@@ -1,11 +1,4 @@
-h1 {
-    border: 1px solid black;
-    width: 350px;
-    height: 200px;
-}
-
 .mainContainer {
-    border: 1px solid red;
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
@@ -34,7 +27,8 @@ h1 {
 }
 
 .lunchName {
-    border: 1px solid blue;
+    margin: 9px 0 27px 0; 
+    font-family:  'URW Chancery L', cursive;
 }
 
 .lunchDetails {
@@ -82,4 +76,73 @@ h1 {
     text-shadow: 0 0 2em rgba(255,255,255,1);
     color:#FFFFFF;
     border-color:#FFFFFF;
+}
+
+.Form-container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 0px; 
+    background: #4d317a;
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    bottom: 645px;
+    padding: 20px;
+    border-radius: 5px;
+    transform-origin: 10px 10px;
+    animation: drop 1.0s ease forwards;              
+}
+
+.formInput {
+    cursor: pointer;
+    font-size: 14px;
+    width: 88%;
+    padding: 20px;
+    outline: none;
+    background: none;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.2);;
+    font-family: 'Apple Chancery', cursive;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: blanchedalmond;
+  } 
+  
+  .formInput:hover{
+      border-color: rgba(255,255,255,0.4);
+  }
+
+  .formSubmit {
+    padding: 20px;
+    outline: none;
+    background: none;
+    color: #492e72;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    border: none;
+    font-family: 'Apple Chancery', cursive;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: #714cac;
+  } 
+  .formSubmit:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+  }
+
+  .exitFormBtn {
+    margin-bottom: 15px;
+}
+
+@keyframes drop {
+    0%{opacity: 0;}
+    70% {transform: translateY(700px);}
+    100% {transform: translateY(650px); opacity: 1;}
+}
+
+@keyframes swing {
+    0%{transform: translateY(650px) rotateZ(0deg)}
+    40%{transform: translateY(650px) rotateZ(90deg)}
+    70%{transform: translateY(650px) rotateZ(70deg)}
+    100%{transform: translateY(650px) rotateZ(75deg)}
 }

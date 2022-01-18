@@ -63,13 +63,14 @@ const LunchSpots = () => {
                 <h3 className='suggestionErr'>I'm sorry none of our segguestions have satisfied your hunger. Please submit a Lunch Spot to optimize your search, thank you! </h3> :
                 null
             }
-            <imag src={image} />
+            <img src={image} />
             <button onClick={()=>randomLunch()} className='generateBtn'>Generate Lunch</button>
             <button onClick={()=>showForm()} className='generateBtn'> Submit A Lunch <AddIcon/></button>
             {toggleForm ?
-            <form onSubmit={handleSubmit(onSubmit)}>
-                    <CancelIcon onClick={showForm} />
+            <form className={toggleForm ? "Form-container" : null} onSubmit={handleSubmit(onSubmit)}>
+                    <CancelIcon className='exitFormBtn' onClick={showForm} />
                     <input
+                        className='formInput' 
                         type='text' 
                         placeholder='Name' 
                         name='name'
@@ -77,6 +78,7 @@ const LunchSpots = () => {
                         />
                         {formState.errors.name && formState.errors.name.message}
                     <input
+                        className='formInput' 
                         type='text' 
                         placeholder='Address'
                         name="address" 
@@ -84,12 +86,14 @@ const LunchSpots = () => {
                         />
                         {formState.errors.address && formState.errors.address.message}     
                     <input
+                        className='formInput' 
                         type='url' 
                         placeholder='https://example.com'
                         name="link" 
                         {...register('link', {required: true})}
                         />
                     <input
+                        className='formInput' 
                         type='text' 
                         placeholder='Price Point'
                         name="price" 
