@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react';
 import '../stylesheets/LunchSpots.css';
 import {mockObj} from '../api/helper';
 import {useForm} from 'react-hook-form';
+import AddIcon from '@mui/icons-material/Add';
+import CancelIcon from '@mui/icons-material/Cancel';
+import image from '../stylesheets/images/chefHand.png';
+import iconImage from '../stylesheets/images/chefIcon.png';
 
 const LunchSpots = () => {
     const [lunches, setLunches] = useState(mockObj);
@@ -13,7 +17,7 @@ const LunchSpots = () => {
 
     useEffect(()=> {
         const removedLunch = lunches.filter((lunch) => {
-            return lunch.name != lunchGenerator.name
+            return lunch.name !== lunchGenerator.name
         })
         setLunches(removedLunch);
     }, [lunchGenerator]);
@@ -44,19 +48,24 @@ const LunchSpots = () => {
         <div>
             {
             toggle && lunchGenerator ?
-                <h2 className='lunchName'>{lunchGenerator.name}</h2> :
+            <div>
+                <h2 className='lunchName'>{lunchGenerator.name}</h2> 
+                <img src={iconImage} /> 
+            </div>
+                :
                 <h1 className='introTitle' >...hungry?</h1> 
             }
             { lunchError ?
                 <h3 >I'm sorry none of our segguestions have satisfied your hunger. Please submit a Lunch Spot to optimize your search, thank you! </h3> :
                 null
             }
-
+            <imag src={image} />
             <button onClick={()=>randomLunch()}>Generate Lunch</button>
-            <button onClick={()=>showForm()} className='generateBtn'> Submit A Lunch </button>
+            <button onClick={()=>showForm()} className='generateBtn'> Submit A Lunch <AddIcon/></button>
 
-            
+
             <form onSubmit={handleSubmit(onSubmit)}>
+                    <CancelIcon onClick={showForm} />
                     <input
                         type='text' 
                         placeholder='Name' 
