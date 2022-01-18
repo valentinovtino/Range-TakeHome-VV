@@ -51,7 +51,7 @@ const LunchSpots = () => {
             <div className='lunchContainer'>
                 <h2 className='lunchName'>{lunchGenerator.name}</h2> 
                 <div className='displayDetails'>
-                    <img className='imageIcon' src={iconImage} /> 
+                    <img className='imageIcon' alt='chef logo' src={iconImage} /> 
                     <div className='lunchDetails'>
                         <p className='font'>{lunchGenerator.address}</p>
                         <a className='font' href={lunchGenerator.link}>{lunchGenerator.name}'s website</a> 
@@ -64,7 +64,7 @@ const LunchSpots = () => {
                 <h3 className='suggestionErr'>I'm sorry none of our segguestions have satisfied your hunger. Please submit a Lunch Spot to optimize your search, thank you! </h3> :
                 null
             }
-            <img src={image} />
+            <img alt="chef's hand displaying lunch spot optioins" src={image} />
             <button onClick={()=>randomLunch()} className='generateBtn'>Generate Lunch</button>
             <button onClick={()=>showForm()} className='generateBtn'> Submit A Lunch <AddIcon/></button>
             {toggleForm ?
