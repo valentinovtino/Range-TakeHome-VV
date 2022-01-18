@@ -13,7 +13,7 @@ const LunchSpots = () => {
     const [toggle, setToggle] = useState(false);
     const [toggleForm, setToggleForm] = useState(false);
     const [lunchError, setLunchError] = useState(false);
-    const { register, formState, handleSubmit} = useForm();
+    const { register, formState, reset, handleSubmit} = useForm();
 
     useEffect(()=> {
         const removedLunch = lunches.filter((lunch) => {
@@ -41,6 +41,7 @@ const LunchSpots = () => {
         if (lunchError === true) {
             setLunchError(false)
         }
+        reset()
     }
 
 

@@ -71,6 +71,7 @@
     font-family: 'Apple Chancery', cursive;
     letter-spacing: 0.1em;
     background: #714cac;
+    width: 15%; 
 }
 .generateBtn:hover{
     text-shadow: 0 0 2em rgba(255,255,255,1);
