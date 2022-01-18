@@ -31,21 +31,25 @@ const LunchSpots = () => {
                         type='text' 
                         placeholder='Name' 
                         name='name'
+                        {...register('name')}
                         />
                     <input
                         type='text' 
                         placeholder='Address'
                         name="address" 
+                        {...register('address')}
                         />     
                     <input
                         type='url' 
                         placeholder='https://example.com'
                         name="link" 
+                        {...register('link')}
                         />
                     <input
                         type='text' 
                         placeholder='Price Point'
                         name="price" 
+                        {...register('price')}
                         />  
                     <input className='formSubmit' type='submit'/>
                 </form>
