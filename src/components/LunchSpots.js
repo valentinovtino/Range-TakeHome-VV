@@ -4,10 +4,20 @@ import {mockObj} from '../api/helper';
 
 const LunchSpots = () => {
     const [lunches, setLunches] = useState(mockObj);
+    const [lunchGenerator, setLunchGenerator] = useState({})
+
+    const randomLunch = () => {
+        const length = lunches.length
+        const randomVal = Math.floor(Math.random() * length);
+        setLunchGenerator(lunches[randomVal]);   
+    }
 
     return (
         <div>
-            <h1>{lunches.map(x=>x.name)}</h1>
+            <h1>Lunch App</h1>
+            <button onClick={()=>randomLunch()}>Generate Lunch</button>
+            <h2 className='lunchName'>{lunchGenerator.name}</h2>
+
         </div>
     )   
 };
