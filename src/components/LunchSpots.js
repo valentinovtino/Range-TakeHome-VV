@@ -8,6 +8,7 @@ const LunchSpots = () => {
     const [lunchGenerator, setLunchGenerator] = useState({})
     const [toggle, setToggle] = useState(false);
     const [toggleForm, setToggleForm] = useState(false);
+    const [lunchError, setLunchError] = useState(false);
     const { register, formState, handleSubmit} = useForm();
 
     useEffect(()=> {
@@ -25,12 +26,17 @@ const LunchSpots = () => {
         setToggle(true);
         const length = lunches.length
         const randomVal = Math.floor(Math.random() * length);
-        setLunchGenerator(lunches[randomVal]);   
+        setLunchGenerator(lunches[randomVal]);
+        if (lunches.length === 0) {
+            setLunchError(true);
+        }     
     }
 
     const onSubmit = (data) => {
-        console.log(data)
         setLunches([...lunches, data])
+        if (lunchError === true) {
+            setLunchError(false)
+        }
     }
 
 
@@ -38,8 +44,12 @@ const LunchSpots = () => {
         <div>
             {
             toggle && lunchGenerator ?
-            <h2 className='lunchName'>{lunchGenerator.name}</h2> :
-            <h1 className='introTitle' >...hungry?</h1> 
+                <h2 className='lunchName'>{lunchGenerator.name}</h2> :
+                <h1 className='introTitle' >...hungry?</h1> 
+            }
+            { lunchError ?
+                <h3 >I'm sorry none of our segguestions have satisfied your hunger. Please submit a Lunch Spot to optimize your search, thank you! </h3> :
+                null
             }
 
             <button onClick={()=>randomLunch()}>Generate Lunch</button>
