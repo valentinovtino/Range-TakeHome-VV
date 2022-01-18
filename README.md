@@ -1,7 +1,7 @@
 # Frontend Take-Home Exercise
 
-![main screen](.src/stylesheets/images/HomeScreen.png)
-![main screen](.src/stylesheets/images/Form.png)
+![image](https://github.com/valentinovtino/Range-TakeHome-VV/blob/main/src/stylesheets/images/HomeScreen.png?raw=true)
+![image](https://github.com/valentinovtino/Range-TakeHome-VV/blob/main/src/stylesheets/images/Form.png?raw=true)
 
 ### Prompt
 
