@@ -6,10 +6,16 @@ import {useForm} from 'react-hook-form';
 const LunchSpots = () => {
     const [lunches, setLunches] = useState(mockObj);
     const [lunchGenerator, setLunchGenerator] = useState({})
+    const [toggle, setToggle] = useState(false);
+    const [toggleForm, setToggleForm] = useState(false);
     const { register, formState, handleSubmit} = useForm();
 
-
+    const showForm = () => {
+        setToggleForm(!toggleForm)
+    }
+    
     const randomLunch = () => {
+        setToggle(true);
         const length = lunches.length
         const randomVal = Math.floor(Math.random() * length);
         setLunchGenerator(lunches[randomVal]);   
@@ -20,12 +26,19 @@ const LunchSpots = () => {
         setLunches([...lunches, data])
     }
 
+
     return (
         <div>
-            <h1>Lunch App</h1>
-            <button onClick={()=>randomLunch()}>Generate Lunch</button>
-            <h2 className='lunchName'>{lunchGenerator.name}</h2>
+            {
+            toggle && lunchGenerator ?
+            <h2 className='lunchName'>{lunchGenerator.name}</h2> :
+            <h1 className='introTitle' >...hungry?</h1> 
+            }
 
+            <button onClick={()=>randomLunch()}>Generate Lunch</button>
+            <button onClick={()=>showForm()} className='generateBtn'> Submit A Lunch </button>
+
+            
             <form onSubmit={handleSubmit(onSubmit)}>
                     <input
                         type='text' 
@@ -39,7 +52,8 @@ const LunchSpots = () => {
                         placeholder='Address'
                         name="address" 
                         {...register('address', {required:'Address required. Please enter the address of your Lunch Spot!'})}
-                        />     
+                        />
+                        {formState.errors.address && formState.errors.address.message}     
                     <input
                         type='url' 
                         placeholder='https://example.com'
