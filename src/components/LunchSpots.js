@@ -45,25 +45,28 @@ const LunchSpots = () => {
 
 
     return (
-        <div>
-            {
-            toggle && lunchGenerator ?
-            <div>
+        <div className='mainContainer'>
+            { toggle && lunchGenerator ?
+            <div className='lunchContainer'>
                 <h2 className='lunchName'>{lunchGenerator.name}</h2> 
-                <img src={iconImage} /> 
-            </div>
-                :
-                <h1 className='introTitle' >...hungry?</h1> 
-            }
+                <div>
+                    <img className='imageIcon' src={iconImage} /> 
+                    <div className='lunchDetails'>
+                        <p className='font'>{lunchGenerator.address}</p>
+                        <a className='font' href={lunchGenerator.link}>{lunchGenerator.name}'s website</a> 
+                        <p className='font' >{lunchGenerator.price}</p>
+                    </div>
+                </div>
+            </div> :
+                <h1 className='introTitle' >...hungry?</h1> }
             { lunchError ?
-                <h3 >I'm sorry none of our segguestions have satisfied your hunger. Please submit a Lunch Spot to optimize your search, thank you! </h3> :
+                <h3 className='suggestionErr'>I'm sorry none of our segguestions have satisfied your hunger. Please submit a Lunch Spot to optimize your search, thank you! </h3> :
                 null
             }
             <imag src={image} />
-            <button onClick={()=>randomLunch()}>Generate Lunch</button>
+            <button onClick={()=>randomLunch()} className='generateBtn'>Generate Lunch</button>
             <button onClick={()=>showForm()} className='generateBtn'> Submit A Lunch <AddIcon/></button>
-
-
+            {toggleForm ?
             <form onSubmit={handleSubmit(onSubmit)}>
                     <CancelIcon onClick={showForm} />
                     <input
@@ -93,7 +96,8 @@ const LunchSpots = () => {
                         {...register('price', {required: true})}
                         />  
                     <input className='formSubmit' type='submit'/>
-                </form>
+                </form> :
+                null}
 
         </div>
     )   

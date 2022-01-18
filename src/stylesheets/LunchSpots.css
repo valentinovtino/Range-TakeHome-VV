@@ -3,3 +3,42 @@ h1 {
     width: 350px;
     height: 200px;
 }
+
+.mainContainer {
+    border: 1px solid red;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lunchContainer {
+    width: 350px;
+    height: 200px;
+    border: 1px solid green;
+}
+
+.lunchName {
+    border: 1px solid blue;
+}
+
+.lunchDetails {
+    width: 150px;
+    border: 1px solid yellow;
+}
+
+.imageIcon {
+    height: 100px;
+    width: 100px;
+}
+
+.font {
+    font-family: 'Apple Chancery', cursive;
+    color: blanchedalmond;
+    margin: 0;
+}
+
+.suggestionErr {
+    font-family:  'URW Chancery L', cursive;
+}
