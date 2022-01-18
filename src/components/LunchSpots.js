@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../stylesheets/LunchSpots.css';
 import {mockObj} from '../api/helper';
 import {useForm} from 'react-hook-form';
@@ -9,6 +9,13 @@ const LunchSpots = () => {
     const [toggle, setToggle] = useState(false);
     const [toggleForm, setToggleForm] = useState(false);
     const { register, formState, handleSubmit} = useForm();
+
+    useEffect(()=> {
+        const removedLunch = lunches.filter((lunch) => {
+            return lunch.name != lunchGenerator.name
+        })
+        setLunches(removedLunch);
+    }, [lunchGenerator]);
 
     const showForm = () => {
         setToggleForm(!toggleForm)
