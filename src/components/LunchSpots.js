@@ -33,6 +33,7 @@ const LunchSpots = () => {
                         name='name'
                         {...register('name', {required: 'Name required. Please enter the name of your Lunch Spot!',})}
                         />
+                        {formState.errors.name && formState.errors.name.message}
                     <input
                         type='text' 
                         placeholder='Address'
