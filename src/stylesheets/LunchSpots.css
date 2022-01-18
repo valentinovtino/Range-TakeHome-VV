@@ -64,3 +64,22 @@ h1 {
 .suggestionErr {
     font-family:  'URW Chancery L', cursive;
 }
+
+.generateBtn {
+    padding: 20px;
+    outline: none;
+    background: none;
+    color: #492e72;
+    border-radius: 3px;
+    margin-bottom: 25px;
+    border: none;
+    font-weight: 700;
+    font-family: 'Apple Chancery', cursive;
+    letter-spacing: 0.1em;
+    background: #714cac;
+}
+.generateBtn:hover{
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color:#FFFFFF;
+    border-color:#FFFFFF;
+}
