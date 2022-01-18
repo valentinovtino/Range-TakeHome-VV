@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/LunchSpots.css';
 
 const LunchSpots = () => {
     return (
