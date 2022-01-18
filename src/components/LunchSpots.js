@@ -49,7 +49,7 @@ const LunchSpots = () => {
             { toggle && lunchGenerator ?
             <div className='lunchContainer'>
                 <h2 className='lunchName'>{lunchGenerator.name}</h2> 
-                <div>
+                <div className='displayDetails'>
                     <img className='imageIcon' src={iconImage} /> 
                     <div className='lunchDetails'>
                         <p className='font'>{lunchGenerator.address}</p>
